@@ -1,0 +1,33 @@
+body {
+  background:#ccc;
+  font-family:Lucida Grande, Tahoma, Sans-Serif;
+}
+
+#page {
+  width:920px;
+  margin:20px auto;
+  padding:20px;
+  background:#fff;
+}
+
+#page:after {
+  clear:both; content:' '; display:block; font-size:0;
+  line-height:0; visibility:hidden; width:0;	height:0;
+}
+
+#sidebar {
+  float:left;
+  width:220px;
+  min-height:480px;
+  border-right:dashed 1px #666;
+  margin-right:19px;
+}
+
+#content {
+  width:680px;
+  float:right;
+}
+
+#content img.full {
+  width:680px;
+}

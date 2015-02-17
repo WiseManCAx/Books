@@ -1,0 +1,16 @@
+/*
+Theme Name: New Mobile Theme
+Description: My shiny theme for mobile devices.
+Author: Me
+Template: mobile_pack_base
+*/
+
+#header,
+#footer {
+	background-color:#0000CC!important;
+}
+
+#header p, #header a,
+#footer p, #footer a {
+	color:#FF6600!important;
+}

@@ -1,0 +1,25 @@
+#menu {
+  background:none;
+}
+  
+#menu a {
+  font-size:medium;
+  text-decoration:none;
+  padding:5px 10px;
+  margin:0;
+  border:2px solid #fff;
+  background:#000;
+}
+  
+h1 {
+  text-align:center;
+}
+
+#menu {
+  text-align:center;
+}
+
+#menu a {
+  margin:0;
+}
+  

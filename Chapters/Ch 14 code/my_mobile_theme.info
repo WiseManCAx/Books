@@ -1,0 +1,10 @@
+name = "My Mobile Theme"
+description = "Made by reading Chapter 14."
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = style.css
+
+regions[header] = Header
+regions[above] = Above content
+regions[below] = Below content
+regions[footer] = Footer

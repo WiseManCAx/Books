@@ -1,0 +1,161 @@
+<?php
+
+define("MOBILE_THEME", 'my_mobile_theme');
+
+function my_mobile_module_init() {
+  if (request_is_mobile()) {
+    global $custom_theme;
+    $custom_theme = MOBILE_THEME;
+  }
+}
+
+
+function my_mobile_module_nodeapi(&$node, $op, $a3=NULL, $a4=NULL) {
+  switch ($op) {
+    case 'view':
+      $node->content['body']['#value'] =
+      resize_images(
+        paginate(
+          remove_tags (
+            $node->content['body']['#value']
+          )
+        )
+      );
+  }
+}
+
+function my_mobile_module_comment(&$comment, $op) {
+  switch ($op) {
+    case 'view':
+      $comment->comment =
+      resize_images(
+        remove_tags (
+          $comment->comment
+        )
+      );
+  }
+}
+
+function remove_tags($string) {
+  if (request_is_mobile()) {
+    $remove_tags = "/\<\/?(marquee|frame|iframe|object|embed)[^>]*\>/Usi";
+    $string = preg_replace($remove_tags, "", $string);
+    $remove_scripts = "/\<script.*\<\/script\>/Usi";
+    $string = preg_replace($remove_scripts, "", $string);
+  }
+  return $string;
+}
+
+function paginate($string) {
+  if (request_is_mobile()) {
+    $pages = array();
+    $page = '';
+    foreach(split('<p>', $string) as $paragraph) {
+      if (!$paragraph) { continue; }
+      $page_length = strlen($page);
+      if($page_length > 0 && $page_length + strlen($paragraph) > 2000) {
+        $pages[] = $page;
+        $page = '';
+      }
+      $page .= "<p>$paragraph";
+    }
+    $pages[] = $page;
+
+    $current_page = 0;
+    if(isset($_GET['mmp_page']) && is_numeric($current_page = $_GET['mmp_page'])) {
+      if ($current_page < 0) {
+        $current_page = 0;
+      }
+      if ($current_page > sizeof($pages)) {
+        $current_page = sizeof($pages);
+      }
+    }
+    $string = $pages[$current_page];
+    if ($current_page < sizeof($pages) - 1) {
+      $next = set_querystring('mmp_page', ($current_page+1));
+      $string .= "<a href='$next'>Next</a>";
+    }
+  }
+  return $string;
+}
+
+function set_querystring($key, $value) {
+  return '?' . drupal_query_string_encode(
+    array_merge($_GET, array($key=>$value)), array('q')
+  );
+}
+
+
+function resize_images($string) {
+  if (request_is_mobile()) {
+    $host = "http://" . $_SERVER['HTTP_HOST'];
+    $tinysrc = "http://localhost:8087/x90/";
+    preg_match_all('/\<img.*>/Usi', $string, $images);
+    foreach ($images[0] as $image) {
+      $new_image = preg_replace('/(width|height)=[\'"]\d+[\'"]/', '', $image);
+      $new_image = preg_replace('/src=[\'"](http:\/\/[^\'"]*)[\'"]/', "src='$tinysrc$1'", $new_image);
+      $new_image = preg_replace('/src=[\'"](\/[^\'"]*)[\'"]/', "src='$tinysrc$host$1'", $new_image);
+      $string = str_replace($image, $new_image, $string);
+    }
+  }
+  return $string;
+}
+
+
+
+function request_is_mobile() {
+  global $_request_is_mobile;
+  if (!isset($_request_is_mobile)) {
+    $_request_is_mobile = _request_is_mobile();
+  }
+  return $_request_is_mobile;
+}
+
+function _request_is_mobile() {
+  if (get_http_header('X-Wap-Profile')!='' || get_http_header('Profile')!='') {
+    return true;
+  }
+  if (stripos(get_http_header('Accept'), 'wap') !== false) {
+    return true;
+  }
+  $user_agent = strtolower(get_http_header('User-Agent'));
+  $ua_prefixes = array(
+    'w3c ', 'w3c-', 'acs-', 'alav', 'alca', 'amoi', 'audi', 'avan', 'benq',
+    'bird', 'blac', 'blaz', 'brew', 'cell', 'cldc', 'cmd-', 'dang', 'doco',
+    'eric', 'hipt', 'htc_', 'inno', 'ipaq', 'ipod', 'jigs', 'kddi', 'keji',
+    'leno', 'lg-c', 'lg-d', 'lg-g', 'lge-', 'lg/u', 'maui', 'maxo', 'midp',
+    'mits', 'mmef', 'mobi', 'mot-', 'moto', 'mwbp', 'nec-', 'newt', 'noki',
+    'palm', 'pana', 'pant', 'phil', 'play', 'port', 'prox', 'qwap', 'sage',
+    'sams', 'sany', 'sch-', 'sec-', 'send', 'seri', 'sgh-', 'shar', 'sie-',
+    'siem', 'smal', 'smar', 'sony', 'sph-', 'symb', 't-mo', 'teli', 'tim-',
+    'tosh', 'tsm-', 'upg1', 'upsi', 'vk-v', 'voda', 'wap-', 'wapa', 'wapi',
+    'wapp', 'wapr', 'webc', 'winw', 'winw', 'xda ', 'xda-'
+  );
+  if (in_array(substr($user_agent, 0, 4), $ua_prefixes)) {
+    return true;
+  }
+  $ua_keywords = array(
+    'android', 'blackberry', 'hiptop', 'ipod', 'lge vx', 'midp',
+    'maemo', 'mmp', 'netfront', 'nintendo DS', 'novarra', 'openweb',
+    'opera mobi', 'opera mini', 'palm', 'psp', 'phone', 'smartphone',
+    'symbian', 'up.browser', 'up.link', 'wap', 'windows ce'
+  );
+  if (preg_match("/(" . implode("|", $ua_keywords) . ")/i", $user_agent)) {
+    return true;
+  }
+  return false;
+}
+
+function get_http_header($name, $original_device=true, $default='') {
+  if ($original_device) {
+    $original = get_http_header("X-Device-$name", false);
+    if ($original!=='') {
+      return $original;
+    }
+  }
+  $key = 'HTTP_' . strtoupper(str_replace('-', '_', $name));
+  if (isset($_SERVER[$key])) {
+    return $_SERVER[$key];
+  }
+  return $default;
+}

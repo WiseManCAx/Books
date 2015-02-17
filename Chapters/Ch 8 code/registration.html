@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.0//EN'
+ 'http://www.wapforum.org/DTD/xhtml-mobile10.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Registration</title>
+    <link href="style.css" rel="stylesheet" media="screen" type="text/css" />
+  </head>
+  <body>
+
+    <h1>Registration</h1>
+
+    <div class='instructions'>Please enter your details below</div>
+
+    <form action='/register' method='post' id='register'>
+
+      <div class='field'>
+        <label class="name">Username:</label> (numbers and letters only)
+        <input type="text" name="username" id="username" />
+      </div>
+            
+      <div class='field'>
+        <label class="name">Email:</label> (which we never share)
+        <input type="email" name="email" id="email" />
+      </div>
+            
+      <div class='field'>
+        <label class="name">Password:</label> (4 characters or longer)
+        <input type="password" name="password" id="password"/>
+        <span id='password-error' class='error'></span>
+      </div>
+
+      <div class='button'>
+        <input name="Register" type="submit" value="Register" />
+      </div>
+
+    </form>
+
+    <script type='text/javascript'>
+      document.getElementById('register').onsubmit = function() {
+        var passwordField = document.getElementById('password');
+        if (passwordField.value.length < 4) {
+          document.getElementById('password-error').innerText = (
+            "Must be 4 characters or longer"
+          );
+          passwordField.focus();
+          return false;
+        }
+      };
+    </script>
+
+  </body>
+</html>

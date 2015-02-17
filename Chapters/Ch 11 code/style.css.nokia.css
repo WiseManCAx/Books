@@ -1,0 +1,10 @@
+#header,
+#footer {
+	background-color:#0000CC!important;
+}
+
+body.nokia_high div#header,
+body.nokia_high div#footer {
+	background-color:#0000CC!important;
+}
+

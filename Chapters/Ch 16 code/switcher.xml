@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system">
+  <name>System - Switcher</name>
+  <version>0.1</version>
+  <creationDate>25/12/2010</creationDate>
+  <author>Me</author>
+  <authorEmail>me@mysite.com</authorEmail>
+  <authorUrl>http://www.mysite.com</authorUrl>
+  <copyright>Copyright 2010, Me.</copyright>
+  <description>
+    My mobile plugin for Joomla, made by reading Chapter 16.
+  </description>
+  <files>
+    <filename plugin="switcher">switcher.php</filename>
+  </files>
+</install>

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.0//EN' 'http://www.wapforum.org/DTD/xhtml-mobile10.dtd'>
+<html>
+  <head>
+    <title>Client-side detection</title>
+  </head>
+  <body>
+    <h1>Client-side detection</h1>
+    <p>You have a <span id='browser_type'>mobile</span> browser.</p>
+    <script>
+      <!--
+
+      //var userAgent = navigator.userAgent;
+      //document.write(userAgent);
+
+      var browserType = document.getElementById('browser_type');
+      if (isMobile()) {
+        browserType.innerHTML = 'mobile, Javascript enabled';
+        document.body.style.backgroundColor = 'green';
+      } else {
+        browserType.innerHTML = 'desktop, Javascript enabled';
+        document.body.style.backgroundColor = 'yellow';
+      }
+
+      function isMobile() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        var uaPrefixes = new Array(
+          'w3c ', 'w3c-', 'acs-', 'alav', 'alca', 'amoi', 'audi', 'avan', 'benq',
+          'bird', 'blac', 'blaz', 'brew', 'cell', 'cldc', 'cmd-', 'dang', 'doco',
+          'eric', 'hipt', 'htc_', 'inno', 'ipaq', 'ipod', 'jigs', 'kddi', 'keji',
+          'leno', 'lg-c', 'lg-d', 'lg-g', 'lge-', 'lg/u', 'maui', 'maxo', 'midp',
+          'mits', 'mmef', 'mobi', 'mot-', 'moto', 'mwbp', 'nec-', 'newt', 'noki',
+          'palm', 'pana', 'pant', 'phil', 'play', 'port', 'prox', 'qwap', 'sage',
+          'sams', 'sany', 'sch-', 'sec-', 'send', 'seri', 'sgh-', 'shar', 'sie-',
+          'siem', 'smal', 'smar', 'sony', 'sph-', 'symb', 't-mo', 'teli', 'tim-',
+          'tosh', 'tsm-', 'upg1', 'upsi', 'vk-v', 'voda', 'wap-', 'wapa', 'wapi',
+          'wapp', 'wapr', 'webc', 'winw', 'winw', 'xda ', 'xda-'
+        );
+        if (new RegExp('^(' + uaPrefixes.join('|') + ')$').test(
+          userAgent.substr(0, 4)
+        )) {
+          return true;
+        }
+        var uaKeywords = new Array(
+          'android', 'blackberry', 'hiptop', 'ipod', 'lge vx', 'midp', 
+          'maemo', 'mmp', 'netfront', 'nintendo DS', 'novarra', 'openweb',
+          'opera mobi', 'opera mini', 'palm', 'psp', 'phone', 'smartphone',
+          'symbian', 'up.browser', 'up.link', 'wap', 'windows ce'
+        );
+        if (new RegExp('(' + uaKeywords.join('|') + ')').test(userAgent)) {
+          return true;
+        }
+        return false;
+      }
+
+      //-->
+    </script>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+body { 
+  background:#F7F7F7;
+  margin:0;
+}
+
+#header, #main, #footer {
+  margin:0;
+  padding:0.5em;
+}
+
+#header img {
+  float:left;
+}
+
+#header h1 {
+  font-size:1.4em;
+  margin:0;
+  line-height:32px;
+  display:inline
+}
+
+#header, #footer {
+  background:#333333;
+  color:#FFFFFF;
+}
+
+#header a, #footer a {
+  color:#FFFFFF;
+}
+
+
+.node {
+  background:#FFFFFF;
+  margin-bottom:1em;
+  border:1px solid #DDDDDD;
+}
+
+.node .header, .node .excerpt, .node .metadata, .node .content {
+  margin:0;
+  padding: 0.5em;
+}
+
+.node .header h3 {
+  margin:0;
+  font-size:1.2em;
+  line-height:32px;
+  display:inline;
+}
+
+.node .header {
+  background:#CCCCCC;
+}
+
+.node .metadata {
+  background:#DDDDDD;
+}
+
+.node .header a {
+  color:#000000;
+}
+
+.node .excerpt p {
+  margin:0;
+}
+
+.node .content p {
+  margin:0 0 1em;
+}
+
+.node .header .picture img {
+  height:32px;
+  width:32px;
+  vertical-align:top;
+  float:left;
+  padding-right:0.5em;
+}
+
+
+.block {
+  background:#FFFFFF;
+  margin-bottom:1em;
+  border:1px solid #DDDDDD;
+}
+
+.block .header, .block .content {
+  margin:0;
+  padding: 0.5em;
+}
+
+.block .header h3 {
+  margin:0;
+  font-size:1.2em;
+  display:inline;
+}
+
+.block .header {
+  background:#CCCCCC;
+}
+
+.block .header a {
+  color:#000000;
+}
+
+.block .content p {
+  margin:0 0 1em;
+}
+
+.block #user-login-form {
+  text-align:left;
+}
+
+.form-item {
+  margin-top:0;
+}
+
+.block #user-login-form ul {
+  margin-top:1em;
+}
+
+
+.box {
+  background:#FFFFFF;
+  margin-bottom:1em;
+  border:1px solid #DDDDDD;
+}
+
+.box .header, .box .content {
+  margin:0;
+  padding: 0.5em;
+}
+
+.box .header h3 {
+  margin:0;
+  font-size:1.2em;
+  display:inline;
+}
+
+.box .header {
+  background:#CCCCCC;
+}
+
+.box .header a {
+  color:#000000;
+}
+
+.box .content p {
+  margin:0 0 1em;
+}
+
+
+.comment {
+  background:#FFFFFF;
+  margin-bottom:1em;
+  border:1px solid #DDDDDD;
+}
+
+.comment .header, .comment .metadata, .comment .content {
+  margin:0;
+  padding: 0.5em;
+}
+
+.comment .header h3 {
+  margin:0;
+  font-size:1.2em;
+  line-height:32px;
+  display:inline;
+}
+
+.comment .header {
+  background:#CCCCCC;
+}
+
+.comment .metadata {
+  background:#DDDDDD;
+}
+
+.comment .header a {
+  color:#000000;
+}
+
+.comment .content p {
+  margin:0 0 1em;
+}
+
+.comment .header .picture img {
+  height:32px;
+  width:32px;
+  vertical-align:top;
+  float:left;
+  padding-right:0.5em;
+}
+
+
+.menu {
+  margin:0;
+  padding:0.5em;
+  background: #666666;
+}
+.menu a {
+  color:#FFFFFF;
+}
+.secondary {
+  background: #999999;
+  font-size:0.8em;
+  padding:0.625em;
+}
+
+.form-text, .form-textarea {
+  width:95%;
+}

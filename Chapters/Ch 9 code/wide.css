@@ -1,0 +1,54 @@
+#menu {
+  background:none;
+}
+  
+#menu a {
+  font-size:medium;
+  text-decoration:none;
+  padding:5px 10px;
+  margin:0;
+  border:2px solid #fff;
+  background:#000;
+}
+
+h1 {
+  border-bottom:1px solid #fff;
+}
+
+#menu {
+  position:absolute;
+  left:8px;
+  width:146px;
+  padding:0;
+}
+
+#menu a {
+  display:block;
+  text-align:center;
+  margin:8px 0;
+}
+
+#content {
+  position:absolute;
+  left:160px;
+  padding-left:7px;
+  border-left:1px solid #fff;
+}
+
+#content img {
+  max-width:304px;
+}
+  
+#content p:first-child {
+  margin-top:8px;
+}
+
+#content {
+  max-width:640px;
+}
+
+#content img {
+  padding:0 8px 8px 0;
+  display:inline;
+  float:left;
+}

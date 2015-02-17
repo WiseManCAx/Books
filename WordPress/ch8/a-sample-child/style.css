@@ -1,0 +1,31 @@
+/*
+Theme Name: A Sandbox Child Theme
+Theme URI: mirmillo.com
+Description: A sample sandbox child theme
+Author: David Damstra
+Author URI: mirmillo.com
+Template: sandbox
+Version: 1.0
+*/
+
+/* import the base sandbox styles */
+@import url('../sandbox/style.css');
+
+/* Two-column with sidebar on left from the /examples/ folder  */
+@import url('../sandbox/examples/2c-r.css');
+
+body {
+     background: #E0A3BD;
+	 color: #333;
+     font: 100%/1.5 calibri, arial, verdana, sans-serif;
+}
+
+/* a, a:link ,a:link ,a:link, a:hover {
+   	background:transparent;
+	text-decoration:underline;
+	cursor:pointer
+	} 
+a:link {color:#D74C4C} 
+a:visited {color:#F91DFC} 
+a:hover,a:active {color:#FFF688} */
+

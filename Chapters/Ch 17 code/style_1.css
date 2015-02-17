@@ -1,0 +1,140 @@
+/*
+Theme Name: My Mobile Theme
+Description: Made by reading Chapter 17.
+Author: Me
+Version: 1.0
+*/
+
+body {
+  background:#F7F7F7;
+  margin:0;
+}
+
+#header, #main, #footer {
+  margin:0;
+  padding:0.5em;
+}
+
+#header h1 {
+  font-size:1.4em;
+  margin:0;
+  padding-left:36px;
+  line-height:32px;
+  background-image: url(/wp-admin/images/wp-logo.png);
+  background-repeat: no-repeat;
+}
+
+#header, #footer {
+  background:#333333;
+  color:#FFFFFF;
+}
+
+#header a, #footer a {
+  color:#FFFFFF;
+}
+
+h2.title {
+  font-size:1.2em;
+  margin:0 0 .8em 0;
+  border-bottom:2px solid #DDDDDD;
+}
+
+.post {
+  background:#FFFFFF;
+  margin-bottom:1em;
+  border:1px solid #DDDDDD;
+}
+
+.post .header, .post .excerpt, .post .metadata, .post .content {
+  margin:0;
+  padding: 0.5em;
+}
+
+.post .header h3 {
+  margin:0;
+  font-size:1.2em;
+  line-height:32px;
+  display:inline;
+}
+
+.post .header {
+  background:#CCCCCC;
+}
+
+.post .metadata {
+  background:#DDDDDD;
+}
+
+.post .header a {
+  color:#000000;
+}
+
+.post .excerpt p {
+  margin:0;
+}
+
+.post .content p {
+  margin:0 0 1em;
+}
+
+.post .header .thumbnail {
+  vertical-align:top;
+  float:left;
+  padding-right:0.5em;
+}
+
+#pager {
+  background:#CCCCCC;
+  padding:0.5em;
+  text-align:center;
+}
+
+#pager a {
+  padding:0.5em;
+  background:#DDDDDD;
+}
+
+.comment {
+  background:#FFFFFF;
+  margin-bottom:1em;
+  border:1px solid #DDDDDD;
+}
+
+.comment .comment-author, .comment .comment-meta,
+.comment p, .comment .reply {
+  margin:0;
+  padding: 0.5em;
+}
+
+.comment .comment-author {
+  background:#CCCCCC;
+  line-height:32px;
+}
+
+.comment .avatar {
+  float: left;
+  padding-right: 0.5em;
+  vertical-align: top;
+}
+
+.comment .comment-meta, .comment .reply {
+  background:#DDDDDD;
+}
+
+input, textarea {
+  display:block;
+  width:95%;
+}
+
+.menu {
+  margin:0;
+  padding:0.5em;
+  background: #666666;
+}
+.menu .page_item, .menu .menu-item {
+  padding-right:0.5em;
+  display:inline;
+}
+.menu a {
+  color:#FFFFFF;
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <title>The Wine Site</title>
+      <link rel="stylesheet" type="text/css"
+        href="../lib/sencha-touch/resources/css/sencha-touch.css">
+      <style>
+        p {
+          text-align: center;
+          padding: 0.5em 5% 0;
+        }
+      </style>
+
+      <script type="text/javascript"
+        src="../lib/sencha-touch/sencha-touch.js"></script>
+      <script type="text/javascript">
+
+Ext.setup({
+  onReady: function() {
+
+    Ext.regModel('Grape', {
+      fields: [
+        {name:'name', type:'string'},
+        {name:'description', type:'string'},
+        {name:'image', type:'string'}
+      ]
+    });
+
+    var grapes = new Ext.data.Store({
+      model: 'Grape',
+      data: [
+        {
+          name: 'Abouriou',
+          description:
+            'Abouriou is a red wine grape grown primarily in ' +
+            'South West France and, in small quantities, in California...',
+          image: 'grapes.jpg'
+        },{
+          name: 'Acolon',
+        },{
+          name: 'Agiorgitiko',
+        },{
+          name: 'Aglianico',
+        },{
+          name: 'Aleatico',
+        }
+      ],
+    });
+
+    var toolbar = new Ext.Toolbar({
+      title: 'The Wine Site',
+      items: [{text:'Back', ui:'back', handler: function() {
+        app.setActiveItem(menu);
+      }}]
+    })
+
+    var menu = new Ext.List({
+      store: grapes,
+      itemTpl: '<tpl for=".">{name}</tpl>',
+      listeners: {
+        selectionchange: function(selectionModel, records) {
+          if (records.length > 0) {
+            toolbar.setTitle(records[0].get('name'));
+            info.update(records[0].data);
+            app.setActiveItem(info, 'slide');
+          }
+        }
+      }
+    });
+
+    var info = new Ext.Panel({
+      tpl: new Ext.Template(
+        '<tpl for=".">',
+          '<p><img src="{image}"/></p>',
+          '<p>{description}</p>',
+        '</tpl>'
+      ),
+    });
+
+    var app = new Ext.Panel({
+      fullscreen: true,
+      layout: 'card',
+      items: [menu, info],
+      dockedItems: [toolbar]
+    });
+
+  }
+});
+
+      </script>
+
+  </head>
+  <body></body>
+</html>

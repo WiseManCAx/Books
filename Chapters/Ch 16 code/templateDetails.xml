@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="template">
+  <name>my_mobile_template</name>
+  <version>0.1</version>
+  <creationDate>25/12/2010</creationDate>
+  <author>Me</author>
+  <authorEmail>me@mysite.com</authorEmail>
+  <authorUrl>http://www.mysite.com</authorUrl>
+  <copyright>Copyright 2010, Me.</copyright>
+  <description>
+    My mobile template for Joomla, made by reading Chapter 16.
+  </description>
+  <files>
+    <filename>templateDetails.xml</filename>
+    <filename>index.php</filename>
+    <filename>css/template.css</filename>
+    <filename>html/com_content/article/default.php</filename>
+    <filename>html/com_content/category/blog.php</filename>
+    <filename>html/com_content/category/default.php</filename>
+    <filename>html/com_content/frontpage/default.php</filename>
+    <filename>html/com_content/section/blog.php</filename>
+    <filename>html/com_content/section/default.php</filename>
+  </files>
+  <positions>
+    <position>above</position>
+    <position>below</position>
+  </positions>
+
+</install>

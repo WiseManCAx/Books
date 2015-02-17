@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.0//EN'
+ 'http://www.wapforum.org/DTD/xhtml-mobile10.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Recent posts</title>
+    <link href="style.css" rel="stylesheet" media="screen" type="text/css" />
+  </head>
+  <body>
+    <h1>Recent posts</h1>
+    <div class='instructions'>Please enjoy reading our recent posts</div>
+
+    <div class='list'>
+      <div class='item'>
+        <img src='images/one_32.png' class='thumbnail' width='32' height='32'/>
+        [1]
+        <a href='?page=1' accesskey='1' class='toggler' id='toggler-1'>
+          Why I love Rioja
+        </a>
+        <div class='metadata'>
+          Categories: Spain, Red Wines, Tasting
+          <br/>
+          By James | 13th Aug 2010 | 14 comments
+        </div>
+        <div class='extract' id='toggler-1-toggled'>
+          You can't beat the image of a sun-drenched Spanish vineyard
+          for that Hemmingway-esque sense of exotic adventure.
+          James Pearce saddles up for a tour of northern Spain.
+          <a href='post.html'>Read more</a>
+        </div>
+      </div>
+      <div class='item'>
+        <img src='images/two_32.png' class='thumbnail' width='32' height='32'/>
+        [2] <a href='?page=2' accesskey='2'>Bordeaux in Spring</a>
+        <div class='metadata'>
+          Categories: France, Photography
+          <br/>
+          By Jayne | 9th May 2010 | 29 comments
+        </div>
+      </div>
+      <div class='item'>
+        <img src='images/three_32.png' class='thumbnail' width='32' height='32'/>
+        [3] <a href='?page=3' accesskey='3'>Wine in India</a>
+        <div class='metadata'>
+          Categories: New World, Tasting
+          <br/>
+          By Carol | 23rd Apr 2010 | 18 comments
+        </div>
+      </div>
+      <div class='item'>
+        <img src='images/four_32.png' class='thumbnail' width='32' height='32'/>
+        [4] <a href='?page=4' accesskey='4'>German Whites</a>
+        <div class='metadata'>
+          Categories: White Wines, Tasting, Europe
+          <br/>
+          By Jayne | 10th Dec 2009 | 5 comments
+        </div>
+      </div>
+      <div class='item'>
+        <img src='images/five_32.png' class='thumbnail' width='32' height='32'/>
+        [5] <a href='?page=5' accesskey='5'>A Walk Around Napa</a>        
+        <div class='metadata'>
+          Categories: New World, Photography, Tasting
+          <br/>
+          By James | 23rd Oct 2009 | 14 comments
+        </div>
+      </div>
+      
+      <div class='paging'>
+        <a href='.?s=0' class='first'>First</a>
+        <a href='.?s=5' class='previous'>Previous</a>
+        <a href='.?s=15' class='next'>Next</a>
+        <a href='.?s=40' class='last'>Last</a>
+        <br />
+        Showing 11-15 of 43
+      </div>
+
+    </div>
+
+    <script type='text/javascript'>
+      var togglers = document.getElementsByClassName('toggler');
+      for (var t=0; t < togglers.length; t++) {
+        var toggler = togglers[t];
+        toggler.onclick = function() {
+          var toggled = document.getElementById(this.id + '-toggled');
+          if (toggled) {
+            toggled.style.display =
+              (toggled.style.display=="block") ? "none" : "block";
+            return false;
+          }
+        }
+      }
+    </script>
+
+  </body>
+</html>

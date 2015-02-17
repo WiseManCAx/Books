@@ -1,0 +1,91 @@
+body {
+  background:#F7F7F7;
+  margin:0;
+}
+
+#header, #main, #footer {
+  margin:0;
+  padding:0.5em;
+}
+
+#header h1 {
+  font-size:1.4em;
+  margin:0;
+  line-height:32px;
+  display:inline
+}
+
+#header, #footer {
+  background:#333333;
+  color:#FFFFFF;
+}
+
+#header a, #footer a {
+  color:#FFFFFF;
+}
+
+h2.title {
+  font-size:1.2em;
+  margin:0 0 .8em 0;
+  border-bottom:2px solid #DDDDDD;
+}
+
+.category,
+.article {
+  background:#FFFFFF;
+  margin-bottom:1em;
+  border:1px solid #DDDDDD;
+}
+
+.category .header, .category .description, .category .metadata,
+.article .header, .article .introtext, .article .metadata, .article .content {
+  margin:0;
+  padding: 0.5em;
+}
+
+.article .content p {
+  margin:0 0 1em;
+}
+
+.category .header h3,
+.article .header h3 {
+  margin:0;
+  font-size:1.2em;
+  line-height:32px;
+  display:inline;
+}
+
+.category .header,
+.article .header {
+  background:#CCCCCC;
+}
+
+.category .metadata,
+.article .metadata {
+  background:#DDDDDD;
+}
+
+.category .header a,
+.article .header a {
+  color:#000000;
+}
+
+.category .description p,
+.article .introtext p {
+  margin:0;
+}
+
+.menu {
+  margin:0;
+  padding:0.5em;
+  background: #666666;
+}
+.menu li {
+  border-right:1px solid #999999;
+  padding-right:0.5em;
+  margin-right:0.5em;
+  display:inline;
+}
+.menu li a {
+  color:#FFFFFF;
+}

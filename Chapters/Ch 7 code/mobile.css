@@ -1,0 +1,21 @@
+body {
+  background:#ccc;
+  font-family:Lucida Grande, Tahoma, Sans-Serif;
+}
+
+h1 {
+  margin:0;
+}
+
+ul.menu {
+  font-size:smaller;
+  border:dashed 1px #666;
+  padding:10px;
+  text-indent:0;
+  background:#fff;
+  list-style:none;
+}
+
+img.full {
+  width:220px;
+}

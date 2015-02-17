@@ -1,0 +1,5 @@
+name = "My Mobile Module"
+description = "Made by reading Chapter 14."
+package = Mobile
+core = 6.x
+version = 1.0
